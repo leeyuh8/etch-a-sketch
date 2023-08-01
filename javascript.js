@@ -7,12 +7,16 @@
 const canvas = document.querySelector(".canvas");
 
 
-function canvasSize() {
+function setCanvasSize() {
     for (let i = 0; i < 256; i++) {
         const canvasPixel = document.createElement('div');
         canvasPixel.classList.add("canvas-pixel");
+        canvasPixel.addEventListener("mouseover", setPixelColor);
         canvas.appendChild(canvasPixel);
     };
 }
+setCanvasSize();
 
-canvasSize();
+function setPixelColor() {
+    this.setAttribute("style", "background-color: black");
+}

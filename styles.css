@@ -9,6 +9,7 @@ body {
     display:flex;
     align-items: center;
     flex-direction: column;
+    background-color: gray;
 }
 
 h1 {
@@ -21,7 +22,6 @@ h1 {
     height: 506px;
     display: flex;
     flex-wrap: wrap;
-   
 }
 
 .canvas-pixel {
