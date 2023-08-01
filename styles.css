@@ -1,0 +1,21 @@
+* {
+    margin:0;
+    padding:0;
+    box-shadow: border-box;
+    border: dashed 1px red;
+}
+
+.canvas {
+    background-color: beige;
+    width: 506px;
+    height: 506px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.canvas-pixel {
+    border: solid 1px rgb(211, 211, 211);
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+}
