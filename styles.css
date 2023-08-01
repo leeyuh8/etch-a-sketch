@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-shadow: border-box;
-    border: dashed 1px red;
+    /* border: dashed 1px red; */
 }
 
 body {
@@ -24,15 +24,16 @@ button {
 
 .canvas {
     background-color: beige;
-    width: 506px;
-    height: 506px;
+    width: 474px;
+    height: 474px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .canvas-pixel {
-    border: solid 1px rgb(211, 211, 211);
-    width: 30px;
-    height: 30px;
+    border: solid 1px rgb(215, 215, 215);
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
 }
