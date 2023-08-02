@@ -1,7 +1,7 @@
 
 
-const button = document.querySelector("button");
-button.addEventListener("click", requestCanvasSize);
+const buttonPrompt = document.querySelector("button.prompt-canvas-size");
+buttonPrompt.addEventListener("click", requestCanvasSize);
 let canvasPixelWidth;
 function requestCanvasSize() {
     canvasWidth = +prompt("Enter a number from 1-100 to set the canvas pixel width:");
@@ -40,3 +40,10 @@ function setDefaultCanvasSize () {
     };
 }
 setDefaultCanvasSize();
+
+const buttonClear = document.querySelector("button.clear-canvas");
+buttonClear.addEventListener("click", clearCanvas);
+function clearCanvas() {
+    let clearPixels = document.querySelectorAll(".canvas > *");
+    clearPixels.forEach((pixel) => pixel.style.backgroundColor = "transparent");
+}
