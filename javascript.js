@@ -19,12 +19,20 @@ function setCanvasSize() {
         canvasPixel.addEventListener("mouseover", setPixelColor);
         canvas.appendChild(canvasPixel);
     };
-    // - for canvas widths smaller than 16, dynamically make the 
-    // pixels larger. and vise versa.
 }
 
 function setPixelColor () {
     this.style.backgroundColor = "black";
 }
 
-
+function setDefaultCanvasSize () {
+    for (let i = 0; i < Math.pow(16, 2); i++) {
+        const canvasPixel = document.createElement('div');
+        canvasPixel.classList.add("canvas-pixel");
+        canvasPixel.style.width = `${500/16}px`;
+        canvasPixel.style.height = `${500/16}px`;
+        canvasPixel.addEventListener("mouseover", setPixelColor);
+        canvas.appendChild(canvasPixel);
+    };
+}
+setDefaultCanvasSize();
