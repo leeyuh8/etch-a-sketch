@@ -36,6 +36,3 @@ button {
     flex-shrink: 0;
 }
 
-.pixel-color:hover {
-    background-color: black;
-}
