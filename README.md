@@ -5,7 +5,14 @@ PURPOSE:
     with their mouse.
 
 SKILLS:
-    -
+    - DOM manipulation and events through javascript to add dynamic
+    styling and interactive components.
+    - 
+
+LESSONS LEARNED:
+    - Use element.div.style.`css-property` to add/change inline
+    styles on an element without affecting any other inline styles. Using 
+    element.setAttribute() will replace the previous incline styles.
 
 FEATURES:
     - color selector with color wheel
