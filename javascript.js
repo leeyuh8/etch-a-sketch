@@ -25,20 +25,27 @@ function setCanvasSize() {
     }
 }
 
-function drawRainbow () {
+let tool;
+const tools = document.querySelectorAll(".tools > *");
+tools.forEach((tool) => tool.addEventListener("click", getTool));
+function getTool() {
+    tool = this.value;
+}
+
+function drawRainbow() {
     let r = Math.floor((Math.random() * 256));
     let g = Math.floor((Math.random() * 256));
     let b = Math.floor((Math.random() * 256));
     this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
-function setDefaultCanvasSize () {
+function setDefaultCanvasSize() {
     for (let i = 0; i < Math.pow(16, 2); i++) {
         const canvasPixel = document.createElement('div');
         canvasPixel.classList.add("canvas-pixel");
         canvasPixel.style.width = `${500/16}px`;
         canvasPixel.style.height = `${500/16}px`;
-        canvasPixel.addEventListener("mouseover", drawRainbow);
+        canvasPixel.addEventListener("mouseover", () => canvasPixel.style.backgroundColor = "black");
         canvas.appendChild(canvasPixel);
     };
 }
