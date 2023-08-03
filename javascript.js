@@ -26,7 +26,10 @@ function setCanvasSize() {
 }
 
 function setPixelColor () {
-    this.style.backgroundColor = "black";
+    let r = Math.floor((Math.random() * 256));
+    let g = Math.floor((Math.random() * 256));
+    let b = Math.floor((Math.random() * 256));
+    this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
 function setDefaultCanvasSize () {
