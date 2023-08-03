@@ -1,5 +1,27 @@
+let toolSelection = "Pencil";
+const tools = document.querySelectorAll(".tools > *");
+tools.forEach((tool) => tool.addEventListener("click", getTool));
+function getTool() {
+    toolSelection = this.value; 
+    console.log(toolSelection);
+}
+
+const canvas = document.querySelector(".canvas");
+function setDefaultCanvasSize() {
+    for (let i = 0; i < Math.pow(16, 2); i++) {
+        const canvasPixel = document.createElement('div');
+        canvasPixel.classList.add("canvas-pixel");
+        canvasPixel.style.width = `${500/16}px`;
+        canvasPixel.style.height = `${500/16}px`;
+        canvasPixel.addEventListener("mouseover", () => canvasPixel.style.backgroundColor = "black");
+        canvas.appendChild(canvasPixel);
+    };
+}
+setDefaultCanvasSize();
 
 
+
+// BUTTONS
 const buttonPrompt = document.querySelector("button.prompt-canvas-size");
 buttonPrompt.addEventListener("click", requestCanvasSize);
 let canvasLength;
@@ -9,7 +31,6 @@ function requestCanvasSize() {
     setCanvasSize();
 }
 
-const canvas = document.querySelector(".canvas");
 function setCanvasSize() {
     if (canvasWidth === 0) {
         return;
@@ -25,12 +46,11 @@ function setCanvasSize() {
     }
 }
 
-let toolSelection = "Pencil";
-const tools = document.querySelectorAll(".tools > *");
-tools.forEach((tool) => tool.addEventListener("click", getTool));
-function getTool() {
-    toolSelection = this.value; 
-    console.log(toolSelection);
+const buttonClear = document.querySelector("button.clear-canvas");
+buttonClear.addEventListener("click", clearCanvas);
+function clearCanvas() {
+    let clearPixels = document.querySelectorAll(".canvas > *");
+    clearPixels.forEach((pixel) => pixel.style.backgroundColor = "transparent");
 }
 
 function drawPencil() {
@@ -44,21 +64,3 @@ function drawRainbow() {
     this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
-function setDefaultCanvasSize() {
-    for (let i = 0; i < Math.pow(16, 2); i++) {
-        const canvasPixel = document.createElement('div');
-        canvasPixel.classList.add("canvas-pixel");
-        canvasPixel.style.width = `${500/16}px`;
-        canvasPixel.style.height = `${500/16}px`;
-        canvasPixel.addEventListener("mouseover", () => canvasPixel.style.backgroundColor = "black");
-        canvas.appendChild(canvasPixel);
-    };
-}
-setDefaultCanvasSize();
-
-const buttonClear = document.querySelector("button.clear-canvas");
-buttonClear.addEventListener("click", clearCanvas);
-function clearCanvas() {
-    let clearPixels = document.querySelectorAll(".canvas > *");
-    clearPixels.forEach((pixel) => pixel.style.backgroundColor = "transparent");
-}
