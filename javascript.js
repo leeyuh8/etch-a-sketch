@@ -19,13 +19,13 @@ function setCanvasSize() {
             const canvasPixel = document.createElement('div');
             canvasPixel.classList.add("canvas-pixel");
             canvasPixel.setAttribute("style", `width:${canvasPixelWidth}px; height:${canvasPixelWidth}px;`);
-            canvasPixel.addEventListener("mouseover", setPixelColor);
+            canvasPixel.addEventListener("mouseover", drawRainbow);
             canvas.appendChild(canvasPixel);
         };
     }
 }
 
-function setPixelColor () {
+function drawRainbow () {
     let r = Math.floor((Math.random() * 256));
     let g = Math.floor((Math.random() * 256));
     let b = Math.floor((Math.random() * 256));
@@ -38,7 +38,7 @@ function setDefaultCanvasSize () {
         canvasPixel.classList.add("canvas-pixel");
         canvasPixel.style.width = `${500/16}px`;
         canvasPixel.style.height = `${500/16}px`;
-        canvasPixel.addEventListener("mouseover", setPixelColor);
+        canvasPixel.addEventListener("mouseover", drawRainbow);
         canvas.appendChild(canvasPixel);
     };
 }
