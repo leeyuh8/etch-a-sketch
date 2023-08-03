@@ -32,7 +32,7 @@ function createPixels(canvasRow) {
         canvasPixel.classList.add("canvas-pixel");
         canvasPixel.style.width = `${500/canvasRow}px`;
         canvasPixel.style.height = `${500/canvasRow}px`;
-        canvasPixel.addEventListener("mouseover", drawPencil);  //selected tool
+        canvasPixel.addEventListener("mouseover", drawPencil);  //colormode
         canvas.appendChild(canvasPixel);
     };
 }
@@ -47,13 +47,15 @@ function clearCanvas() {
 
 
 //TOOL SETTINGS
-let toolSelection = "Pencil";
-const tools = document.querySelectorAll(".tools > *");
-tools.forEach((tool) => tool.addEventListener("click", getTool));
-function getTool() {
-    toolSelection = this.value; 
-    console.log(toolSelection);
-}
+
+
+let colorMode;
+const modes = document.querySelectorAll(".modes > *");
+modes.forEach((mode) =>
+    mode.addEventListener("click", () => colorMode = `draw${mode.value}`)
+);
+
+
 
 function drawPencil() {
     this.style.backgroundColor = "rgba(0, 0, 0, 1)"; //black
