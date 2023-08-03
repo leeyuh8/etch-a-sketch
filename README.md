@@ -7,7 +7,7 @@ PURPOSE:
 SKILLS:
     - DOM manipulation and events through javascript to add dynamic
     styling and interactive components.
-    - 
+    - use string and array methods.
 
 LESSONS LEARNED:
     - Use element.div.style.`css-property` to add/change inline
