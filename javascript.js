@@ -2,10 +2,10 @@
 
 const buttonPrompt = document.querySelector("button.prompt-canvas-size");
 buttonPrompt.addEventListener("click", requestCanvasSize);
-let canvasPixelWidth;
+let canvasLength;
 function requestCanvasSize() {
     canvasWidth = +prompt("Enter a number from 1-100 to set the canvas pixel width:");
-    canvasPixelWidth = 500 / canvasWidth;
+    canvasLength = 500 / canvasWidth;
     setCanvasSize();
 }
 
@@ -18,18 +18,23 @@ function setCanvasSize() {
         for (let i = 0; i < Math.pow(canvasWidth, 2); i++) {
             const canvasPixel = document.createElement('div');
             canvasPixel.classList.add("canvas-pixel");
-            canvasPixel.setAttribute("style", `width:${canvasPixelWidth}px; height:${canvasPixelWidth}px;`);
-            canvasPixel.addEventListener("mouseover", drawRainbow);
+            canvasPixel.setAttribute("style", `width:${canvasLength}px; height:${canvasLength}px;`);
+            canvasPixel.addEventListener("mouseover", drawPencil);
             canvas.appendChild(canvasPixel);
         };
     }
 }
 
-let tool;
+let toolSelection = "Pencil";
 const tools = document.querySelectorAll(".tools > *");
 tools.forEach((tool) => tool.addEventListener("click", getTool));
 function getTool() {
-    tool = this.value;
+    toolSelection = this.value; 
+    console.log(toolSelection);
+}
+
+function drawPencil() {
+    this.style.backgroundColor = "black";
 }
 
 function drawRainbow() {
