@@ -23,16 +23,17 @@ button {
 }
 
 .canvas-container {
-    background-color: beige;
+    background-color: black;
     width: 500px;
     height: 500px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    outline: 1px solid rgb(133, 133, 133);
 }
 
 .canvas-item {
-    outline: 1px solid rgb(215, 215, 215);
+    /* outline: 1px solid rgb(133, 133, 133); */
     flex-shrink: 0;  
 }
 
