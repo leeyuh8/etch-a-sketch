@@ -2,7 +2,6 @@
 // CANVAS SIZE
 const canvasPromptButton = document.querySelector('.prompt-canvas-size');
 canvasPromptButton.addEventListener('click', getCanvasRowLength);
-
 function getCanvasRowLength() {
     let canvasRowLength= prompt('Enter a number from 1-100 to set the canvas size:');
     createCanvasItems(canvasRowLength);
@@ -10,7 +9,6 @@ function getCanvasRowLength() {
 
 
 const canvasContainer = document.querySelector('.canvas-container');
-
 function createCanvasItems(canvasRowLength) {
     canvasContainer.textContent = '';
     for (let i = 0; i < Math.pow(canvasRowLength, 2); i++) {
@@ -45,7 +43,7 @@ function drawPencil() {
     const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
     canvasItemsNodeList.forEach((item) => 
         item.addEventListener('mouseover', () => 
-            item.style.backgroundColor = 'rgb(0 , 0, 0)'   // black
+            item.style.backgroundColor = 'rgb(0, 0, 0)'   // black
         ));
 };
 
@@ -71,8 +69,8 @@ function drawShading() {
     )
 
     canvasItemsNodeList.forEach((item) => 
-        item.addEventListener('mouseover', (e) => {
-            let originalBg = e.target.getAttribute('data-original-bg');
+        item.addEventListener('mouseover', () => {
+            let originalBg = item.getAttribute('data-original-bg');
             let originalBgArr = originalBg.slice(4,-1)
                             .replace(/ /g, '')
                             .split(',');
@@ -80,7 +78,7 @@ function drawShading() {
             let tenPercentOfOriginalG = 0.1 * originalBgArr[1];
             let tenPercentOfOriginalB = 0.1 * originalBgArr[2];
 
-            let currentBg = window.getComputedStyle(e.target).backgroundColor;
+            let currentBg = window.getComputedStyle(item).backgroundColor;
             let currentBgArr = currentBg.slice(4,-1)
                             .replace(/ /g, '')
                             .split(',');
@@ -92,6 +90,7 @@ function drawShading() {
     );
 };
 // why when use rainbow or pencil first then click shading, shading does not work?
+
 
 // CANVAS SETTINGS
 const buttonClear = document.querySelector("button.clear-canvas");
