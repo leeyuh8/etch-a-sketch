@@ -16,6 +16,7 @@ function createCanvasItems(canvasRowLength) {
     for (let i = 0; i < Math.pow(canvasRowLength, 2); i++) {
         let canvasItem = document.createElement('div');
         canvasItem.classList.add('canvas-item');
+        canvasItem.style.backgroundColor = 'rgb(193, 193, 193)';
         canvasItem.style.width = `${500/canvasRowLength}px`;
         canvasItem.style.height = `${500/canvasRowLength}px`;
         canvasContainer.appendChild(canvasItem);
@@ -62,20 +63,34 @@ function drawRainbow() {
 
 function drawShading() {
     const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
+    
+    canvasItemsNodeList.forEach((item) => {
+        let originalBg = window.getComputedStyle(item).getPropertyValue('background-color');
+        item.setAttribute('data-original-bg', `${originalBg}`);
+        }
+    )
+
     canvasItemsNodeList.forEach((item) => 
-        item.addEventListener('mouseover', () =>{
-            let currentRgb = item.style.backgroundColor;
-            let currentRgbArr = currentRgb.slice(4,-1)
+        item.addEventListener('mouseover', (e) => {
+            let originalBg = e.target.getAttribute('data-original-bg');
+            let originalBgArr = originalBg.slice(4,-1)
                             .replace(/ /g, '')
                             .split(',');
-            let darkenR = Math.floor(+currentRgbArr[0] * 0.9);
-            let darkenG = Math.floor(+currentRgbArr[1] * 0.9);
-            let darkenB = Math.floor(+currentRgbArr[2] * 0.9);
+            let tenPercentOfOriginalR = 0.1 * originalBgArr[0];
+            let tenPercentOfOriginalG = 0.1 * originalBgArr[1];
+            let tenPercentOfOriginalB = 0.1 * originalBgArr[2];
+
+            let currentBg = window.getComputedStyle(e.target).backgroundColor;
+            let currentBgArr = currentBg.slice(4,-1)
+                            .replace(/ /g, '')
+                            .split(',');
+            let darkenR = Math.floor(+currentBgArr[0] - tenPercentOfOriginalR);
+            let darkenG = Math.floor(+currentBgArr[1] - tenPercentOfOriginalG);
+            let darkenB = Math.floor(+currentBgArr[2] - tenPercentOfOriginalB);
             item.style.backgroundColor = `rgb(${darkenR}, ${darkenG}, ${darkenB})`;  //darkened original color
         })    
     );
 };
-
 
 
 // CANVAS SETTINGS
