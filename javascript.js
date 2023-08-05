@@ -91,14 +91,14 @@ function drawShading() {
         })    
     );
 };
-
+// why when use rainbow or pencil first then click shading, shading does not work?
 
 // CANVAS SETTINGS
 const buttonClear = document.querySelector("button.clear-canvas");
 buttonClear.addEventListener("click", clearCanvas);
 function clearCanvas() {
-    let clearPixels = document.querySelectorAll(".canvas > *");
-    clearPixels.forEach((pixel) => pixel.style.backgroundColor = "rgb(0, 0, 0)");
+    let items = document.querySelectorAll(".canvas-container > *");
+    items.forEach((item) => item.style.backgroundColor = "rgb(193, 193, 193, 193)");
 }
 
 
