@@ -18,7 +18,10 @@ function getCanvasRowLength() {
 
 const canvasContainer = document.querySelector('.canvas-container');
 function createCanvasItems(canvasRowLength) {
-    canvasContainer.style.backgroundColor = 'black';
+    if (!canvasRowLength) {
+        canvasRowLength = '16';
+    }
+
     canvasContainer.textContent = '';
     for (let i = 0; i < Math.pow(canvasRowLength, 2); i++) {
         let canvasItem = document.createElement('div');
@@ -46,7 +49,7 @@ function createCanvasItems(canvasRowLength) {
         })
     );
 };
-
+createCanvasItems();
 
 // CANVAS SETTINGS
 const buttonClear = document.querySelector("button.clear-canvas");
