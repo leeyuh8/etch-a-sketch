@@ -18,6 +18,7 @@ function getCanvasRowLength() {
 
 const canvasContainer = document.querySelector('.canvas-container');
 function createCanvasItems(canvasRowLength) {
+    canvasContainer.style.backgroundColor = 'black';
     canvasContainer.textContent = '';
     for (let i = 0; i < Math.pow(canvasRowLength, 2); i++) {
         let canvasItem = document.createElement('div');
@@ -52,7 +53,11 @@ const buttonClear = document.querySelector("button.clear-canvas");
 buttonClear.addEventListener("click", clearCanvas);
 function clearCanvas() {
     let items = document.querySelectorAll(".canvas-container > *");
-    items.forEach((item) => item.style.backgroundColor = "rgb(193, 193, 193, 193)");
+    items.forEach((item) => {
+        item.style.backgroundColor = "rgb(255, 255, 255)";
+        item.style.opacity = '1';
+    });
+
 }
 
 
