@@ -74,6 +74,7 @@ function drawRainbow(e) {
     let g = Math.floor((Math.random() * 256));
     let b = Math.floor((Math.random() * 256));
     e.target.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`; //random color
+    e.target.style.opacity = '1';
 };
 
 function drawShading(e) {
