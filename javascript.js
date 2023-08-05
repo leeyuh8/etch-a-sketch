@@ -43,6 +43,8 @@ function createCanvasItems(canvasRowLength) {
                 drawRainbow(e);
             } else if (selectedColorMode === 'Shading') {
                 drawShading(e);
+            } else if (selectedColorMode === 'Eraser') {
+                drawEraser(e);
             } else {
                 drawPencil(e);
             }
@@ -84,6 +86,11 @@ function drawShading(e) {
         e.target.style.opacity -= 0.1;
     }
 };
+
+function drawEraser(e) {
+    e.target.style.backgroundColor = "rgb(255, 255, 255)";
+    e.target.style.opacity = '1';
+}
 
 
 
