@@ -44,7 +44,7 @@ function drawPencil() {
     const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
     canvasItemsNodeList.forEach((item) => 
         item.addEventListener('mouseover', () => 
-            item.style.backgroundColor = 'rgba(0 , 0, 0, 1)'   // black
+            item.style.backgroundColor = 'rgb(0 , 0, 0)'   // black
         ));
 };
 
@@ -55,7 +55,7 @@ function drawRainbow() {
             let r = Math.floor((Math.random() * 256));
             let g = Math.floor((Math.random() * 256));
             let b = Math.floor((Math.random() * 256));
-            item.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`; //random color
+            item.style.backgroundColor = `rgb(${r}, ${g}, ${b})`; //random color
         })
     );   
 };
@@ -64,17 +64,16 @@ function drawShading() {
     const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
     canvasItemsNodeList.forEach((item) => 
         item.addEventListener('mouseover', () =>{
-            
+            let currentRgb = item.style.backgroundColor;
+            let currentRgbArr = currentRgb.slice(4,-1)
+                            .replace(/ /g, '')
+                            .split(',');
+            let darkenR = Math.floor(+currentRgbArr[0] * 0.9);
+            let darkenG = Math.floor(+currentRgbArr[1] * 0.9);
+            let darkenB = Math.floor(+currentRgbArr[2] * 0.9);
+            item.style.backgroundColor = `rgb(${darkenR}, ${darkenG}, ${darkenB})`;  //darkened original color
         })    
     );
-
-
-    let currentRgba = item.style.backgroundColor;
-    let currentRgbaArr = rgba.slice(5,-1)
-                      .replace(/ /g, '')
-                      .split(',');
-    let darkenAlpha = +rgbaArr[3] + .1;
-    return `rgba(${rgbaArr[0]}, ${rgbaArr[1]}, ${rgbaArr[2]}, ${darkenAlpha})`
 };
 
 
@@ -84,7 +83,7 @@ const buttonClear = document.querySelector("button.clear-canvas");
 buttonClear.addEventListener("click", clearCanvas);
 function clearCanvas() {
     let clearPixels = document.querySelectorAll(".canvas > *");
-    clearPixels.forEach((pixel) => pixel.style.backgroundColor = "rgba(0, 0, 0, 0)");
+    clearPixels.forEach((pixel) => pixel.style.backgroundColor = "rgb(0, 0, 0)");
 }
 
 
