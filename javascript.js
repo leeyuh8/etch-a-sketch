@@ -1,42 +1,85 @@
 
-//DEFAULT SETTINGS
-let canvasRow;
-const canvas = document.querySelector(".canvas");
-function setDefaultCanvasSize() {
-    canvasRow = 16;
-    createPixels(canvasRow);
-}
-setDefaultCanvasSize();
+// CANVAS SIZE
+const canvasPromptButton = document.querySelector('.prompt-canvas-size');
+canvasPromptButton.addEventListener('click', getCanvasRowLength);
+
+function getCanvasRowLength() {
+    let canvasRowLength= prompt('Enter a number from 1-100 to set the canvas size:');
+    createCanvasItems(canvasRowLength);
+};
+
+
+const canvasContainer = document.querySelector('.canvas-container');
+
+function createCanvasItems(canvasRowLength) {
+    canvasContainer.textContent = '';
+    for (let i = 0; i < Math.pow(canvasRowLength, 2); i++) {
+        let canvasItem = document.createElement('div');
+        canvasItem.classList.add('canvas-item');
+        canvasItem.style.width = `${500/canvasRowLength}px`;
+        canvasItem.style.height = `${500/canvasRowLength}px`;
+        canvasContainer.appendChild(canvasItem);
+    }
+};
+
+
+// COLOR MODE
+const colorModes = document.querySelectorAll('.modes');
+colorModes.forEach((mode) => 
+    mode.addEventListener('click', getColorMode));
+
+function getColorMode(e) {
+    let colorMode = `${e.target.value}`;
+
+    if (colorMode === 'Pencil') {
+        drawPencil();
+    } else if (colorMode === 'Rainbow') {
+        drawRainbow();
+    } else if (colorMode === 'Shading') {
+        drawShading();
+    }
+};
+
+function drawPencil() {
+    const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
+    canvasItemsNodeList.forEach((item) => 
+        item.addEventListener('mouseover', () => 
+            item.style.backgroundColor = 'rgba(0 , 0, 0, 1)'   // black
+        ));
+};
+
+function drawRainbow() {
+    const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
+    canvasItemsNodeList.forEach((item) => 
+        item.addEventListener('mouseover', () => {
+            let r = Math.floor((Math.random() * 256));
+            let g = Math.floor((Math.random() * 256));
+            let b = Math.floor((Math.random() * 256));
+            item.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`; //random color
+        })
+    );   
+};
+
+function drawShading() {
+    const canvasItemsNodeList = document.querySelectorAll('.canvas-item');
+    canvasItemsNodeList.forEach((item) => 
+        item.addEventListener('mouseover', () =>{
+            
+        })    
+    );
+
+
+    let currentRgba = item.style.backgroundColor;
+    let currentRgbaArr = rgba.slice(5,-1)
+                      .replace(/ /g, '')
+                      .split(',');
+    let darkenAlpha = +rgbaArr[3] + .1;
+    return `rgba(${rgbaArr[0]}, ${rgbaArr[1]}, ${rgbaArr[2]}, ${darkenAlpha})`
+};
+
 
 
 // CANVAS SETTINGS
-const buttonPrompt = document.querySelector("button.prompt-canvas-size");
-buttonPrompt.addEventListener("click", requestCanvasSize);
-function requestCanvasSize() {
-    canvasRow = +prompt("Enter a number from 1-100 to set the canvas pixel width:");
-    setCanvasSize(canvasRow);
-}
-
-function setCanvasSize(canvasRow) {
-    if (canvasRow === 0) {
-        return;
-    } else {
-        canvas.textContent = "";
-        createPixels(canvasRow);
-    }
-}
-
-function createPixels(canvasRow) {
-    for (let i = 0; i < Math.pow(canvasRow, 2); i++) {
-        const canvasPixel = document.createElement('div');
-        canvasPixel.classList.add("canvas-pixel");
-        canvasPixel.style.width = `${500/canvasRow}px`;
-        canvasPixel.style.height = `${500/canvasRow}px`;
-        canvasPixel.addEventListener("mouseover", drawPencil);  //colormode
-        canvas.appendChild(canvasPixel);
-    };
-}
-
 const buttonClear = document.querySelector("button.clear-canvas");
 buttonClear.addEventListener("click", clearCanvas);
 function clearCanvas() {
@@ -46,34 +89,4 @@ function clearCanvas() {
 
 
 
-//TOOL SETTINGS
-
-
-let colorMode;
-const modes = document.querySelectorAll(".modes > *");
-modes.forEach((mode) =>
-    mode.addEventListener("click", () => colorMode = `draw${mode.value}`)
-);
-
-
-
-function drawPencil() {
-    this.style.backgroundColor = "rgba(0, 0, 0, 1)"; //black
-}
-
-function drawRainbow() {
-    let r = Math.floor((Math.random() * 256));
-    let g = Math.floor((Math.random() * 256));
-    let b = Math.floor((Math.random() * 256));
-    this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-}
-
-function drawShading() {
-    let rgba = this.style.backgroundColor;
-    let rgbaArr = rgba.slice(5,-1)
-                      .replace(/ /g, '')
-                      .split(',');
-    let darkenAlpha = +rgbaArr[3] + .1;
-    this.style.backgroundColor = `rgba(${rgbaArr[0]}, ${rgbaArr[1]}, ${rgbaArr[2]}, ${darkenAlpha})`;
-}
 
