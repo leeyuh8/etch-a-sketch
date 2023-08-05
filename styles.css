@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-shadow: border-box;
-    /* outline: 1px dashed red; */
+    outline: 1px dashed red;
 }
 
 body {
@@ -30,6 +30,8 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     outline: 1px solid rgb(133, 133, 133);
+    align-items: center;
+    font-size: 30px;
 }
 
 .canvas-item {
