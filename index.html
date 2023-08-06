@@ -6,17 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="javascript.js" defer></script>
         <link rel="stylesheet" href="styles.css">
+    </head>
     <body>
         <h1>Etch-a-Sketch</h1>
-        <button class="prompt-canvas-size">Click here to set canvas size</button>
-        <button class="clear-canvas">Clear canvas</button>
 
-        <div class="modes">
-            <button class="pencil" value="Pencil">Pencil</button>
-            <button class="rainbow" value="Rainbow">Rainbow</button>
-            <button class="shading" value="Shading">Shading</button>
-            <button class="eraser" value="Eraser">Eraser</button>
+        <div class="content">
+            <div class="all-buttons">
+                <div class="canvas-settings">
+                    <button class="prompt-canvas-size">Click here to set canvas size</button>
+                    <button class="clear-canvas">Clear canvas</button>
+                </div>
+
+                <div class="modes">
+                    <button class="pencil" value="Pencil">Pencil</button>
+                    <button class="rainbow" value="Rainbow">Rainbow</button>
+                    <button class="shading" value="Shading">Shading</button>
+                    <button class="eraser" value="Eraser">Eraser</button>
+                </div>
+            </div>
+
+            <div class="canvas-container"></div>
         </div>
-        <div class="canvas-container"></div>
+
     </body>
 </html>
