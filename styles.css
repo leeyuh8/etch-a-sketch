@@ -84,7 +84,7 @@ button:active {
 }
 
 .prompt-canvas-size {
-    background-color: rgb(171, 213, 187);
+    background-color: rgb(180, 218, 207);
 }
 
 .clear-canvas {
@@ -133,5 +133,12 @@ button:active {
 }
 
 footer {
+    margin-bottom: 20px;
+    color:rgb(49, 3, 0);
+    font-size: 20px;
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
 }
