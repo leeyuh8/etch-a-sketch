@@ -121,7 +121,7 @@ button:active {
     font-size: 30px;
     flex-shrink: 0;
     box-shadow: 
-                -5px -5px 5px rgba(237, 150, 144, 0.5),
+                -5px -5px 5px rgba(49, 3, 0, 0.8),
                 -3px -3px 1px rgb(182, 12, 0),
                 2px 2px 1px rgb(182, 12, 0),
                 5px 5px 5px rgb(251, 179, 174);
