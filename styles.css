@@ -67,12 +67,14 @@ h1 {
 
 button {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 20px;
     border-radius: 10px;
     box-shadow: -1px -1px rgb(255, 227, 227),
                 5px 5px 10px rgba(49, 3, 0, 0.5);
     border: none;
     text-shadow: 1px 1px 2px rgb(255, 251, 243);
+    font-weight: bold;
+    font-family: 'Edu SA Beginner', cursive;
 }
 
 button:active {
