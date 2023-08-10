@@ -9,7 +9,7 @@ body {
     display:flex;
     align-items: center;
     flex-direction: column;
-    background-color: gray;
+    background-color: rgb(40, 94, 94);
 }
 
 
@@ -33,7 +33,7 @@ h1 {
     padding-top: 5px;
     color: rgb(23, 20, 0);
     font-weight: bolder;
-    text-shadow: -1px -1px 1px rgb(255, 254, 226),
+    text-shadow: -1px -1px 1px rgb(255, 251, 145),
                 2px 2px 0 rgb(182, 12, 0), 
                 5px 5px 10px rgba(49, 3, 0, 0.5);
     font-family: 'Dancing Script', cursive;
@@ -132,3 +132,6 @@ button:active {
     flex-shrink: 0;  
 }
 
+footer {
+
+}
