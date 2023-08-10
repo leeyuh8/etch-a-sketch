@@ -27,16 +27,16 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     padding-top: 5px;
     color: rgb(23, 20, 0);
-    font-weight: bold;
+    font-weight: bolder;
     text-shadow: -1px -1px 1px rgb(255, 254, 226),
                 2px 2px 0 rgb(182, 12, 0), 
                 5px 5px 10px rgba(49, 3, 0, 0.5);
-                 
+    font-family: 'Dancing Script', cursive;
 }
 
 .interactive-content {
