@@ -83,6 +83,14 @@ button:active {
                 -1px -1px 3px rgb(49, 3, 0);
 }
 
+.prompt-canvas-size {
+    background-color: rgb(171, 213, 187);
+}
+
+.clear-canvas {
+    background-color: rgb(222, 150, 119);
+}
+
 .pencil {
     background-image: linear-gradient(to right, orange, orange, rgb(41, 41, 41));
 }
