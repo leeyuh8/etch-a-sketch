@@ -128,7 +128,7 @@ button:active {
 }
 
 .canvas-item {
-    /* outline: 1px solid rgb(133, 133, 133); */
+    outline: 1px solid rgb(133, 133, 133);
     flex-shrink: 0;  
 }
 
