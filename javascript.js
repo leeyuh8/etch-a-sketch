@@ -11,7 +11,7 @@ colorModes.forEach((mode) =>
 const canvasPromptButton = document.querySelector('.prompt-canvas-size');
 canvasPromptButton.addEventListener('click', getCanvasRowLength);
 function getCanvasRowLength() {
-    let canvasRowLength= prompt('Enter a number from 1-100 to set the canvas size:');
+    let canvasRowLength= prompt('Enter a number from 1-100 to set the canvas size. This will remove your current work:');
     createCanvasItems(canvasRowLength);
 };
 
