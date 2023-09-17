@@ -4,6 +4,8 @@ PURPOSE:
     To create an etch-a-sketch page where the user draws
     with their mouse.
 
+    [Live Demo](https://leeyuh8.github.io/odin-etch-a-sketch/)
+
 SKILLS:
     - DOM manipulation and events through javascript to add dynamic
     styling and interactive components.
