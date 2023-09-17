@@ -1,7 +1,7 @@
 * {
     margin:0;
     padding:0;
-    box-shadow: border-box;
+    box-sizing: border-box;
     /* outline: 1px dashed red; */
 }
 
@@ -10,6 +10,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgb(40, 94, 94);
+    margin-bottom: 50px;
 }
 
 
@@ -23,7 +24,7 @@ body {
     border-radius: 10px;
     box-shadow: inset 5px 5px 10px rgb(237, 150, 144), 
                 inset -5px -5px 10px rgb(49, 3, 0),
-                5px 5px 10px rgb(20, 1, 0)
+                5px 5px 10px rgb(20, 1, 0);
 }
 
 h1 {
@@ -132,13 +133,34 @@ button:active {
     flex-shrink: 0;  
 }
 
+
+
+html {
+    position: relative;
+    min-width: 100%;
+}
+
 footer {
-    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
     color:rgb(49, 3, 0);
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
+
+img {
+    height: 30px;
+    margin-top: -8px;
+}
+
+
