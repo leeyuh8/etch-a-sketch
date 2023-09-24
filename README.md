@@ -1,8 +1,8 @@
 # Etch-a-Sketch
+[Live Demo](https://leeyuh8.github.io/odin-etch-a-sketch/)
 
 ## PURPOSE:
 To create an interactive Etch-a-Sketch where the user draws by hovering their mouse.
-[Live Demo](https://leeyuh8.github.io/odin-etch-a-sketch/)
 
 ## SKILLS:
 - DOM manipulation and events through javascript to add dynamic styling and interactive components.
