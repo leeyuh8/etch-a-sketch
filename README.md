@@ -18,15 +18,15 @@ Using element.setAttribute() will replace the previous inline styles.
 in global scope. 
 
 ## PLANNED FEATURES:
-[ ] color selector with color wheel
-[ ] change dimensions of canvas with draggable scale
-[x] eraser tool
-[x] rainbow mode tool
-[ ] preload random coloring page outline
-[ ] eye dropper tool
-[ ] area to store last 3 colors used
-[x] shading tool
-[ ] lightening tool
-[x] clear all button
-[ ] toggle grid lines
+- [ ] color selector with color wheel
+- [ ] change dimensions of canvas with draggable scale
+- [x] eraser tool
+- [x] rainbow mode tool
+- [ ] preload random coloring page outline
+- [ ] eye dropper tool
+- [ ] area to store last 3 colors used
+- [x] shading tool
+- [ ] lightening tool
+- [x] clear all button
+- [ ] toggle grid lines
 
