@@ -1,5 +1,5 @@
 # Etch-a-Sketch
-[Live Demo](https://leeyuh8.github.io/odin-etch-a-sketch/)
+[Live Demo](https://leeyuh8.github.io/etch-a-sketch/)
 
 ## PURPOSE:
 To create an interactive Etch-a-Sketch where the user draws by hovering their mouse over the canvas.
